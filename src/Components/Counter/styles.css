@@ -1,0 +1,22 @@
+.counter-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* tut nado razobrat */
+    gap: 20px;
+    min-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border:  2px solid red;
+    border-radius: 20px;
+}
+
+.button-wrapper{
+width: 100%;
+}
+
+.result-container{
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(15, 44, 72);
+}
