@@ -1,23 +1,23 @@
-let age:number= 25;  
+let age: number = 25;
 
-let name:string = "Alice";
+let name: string = "Alice";
 
-let isActive:boolean = true; 
+let isActive: boolean = true;
 
-let nullableValue:null|string = null; // Строка или null
+let nullableValue: null | string = null; // Строка или null
 
-let numbers:number[] = [1, 2, 3, 4]; 
+let numbers: number[] = [1, 2, 3, 4];
 
-let names:string[] = ["Alice", "Bob", "Charlie"];
+let names: string[] = ["Alice", "Bob", "Charlie"];
 
-let mixed:(number|string)[] = [1, "Alice", 2, "Bob"];
+let mixed: (number | string)[] = [1, "Alice", 2, "Bob"];
 
-let colors:(number|boolean|string)[] = [123, "red", true, "blue"];
+let colors: (number | boolean | string)[] = [123, "red", true, "blue"];
 
-const add = (a:number, b:number):number => {
+const add = (a: number, b: number): number => {
   return a - b;
 };
 
-const logMessage = (message:string):void => {
+const logMessage = (message: string): void => {
   console.log(message);
 };
