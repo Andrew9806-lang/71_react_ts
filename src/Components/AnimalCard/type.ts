@@ -1,10 +1,8 @@
+import type { ReactNode } from "react";
 
-
-
-export interface Animal {
-  name: string;
-  species: string;
-  role: string;
-  skills: string[];
-  image: string;
+export interface AnimalCardProps {
+  animalName: string;
+  animalSpecies: string;
+  animalImg: string;
+  children?: ReactNode;
 }

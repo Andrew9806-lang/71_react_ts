@@ -1,6 +1,8 @@
 // import Lesson
 
-import Homework07 from "./Homework/Homework07/Homework"
+import Lesson08 from "./Lesson/Lesson08/Lesson"
+
+// import Homework07 from "./Homework/Homework07/Homework"
 
 // import Lesson06 from "./Lesson/Lesson06/Lesson"
 
@@ -14,7 +16,9 @@ function App() {
     <>
       {/* lesson06 -TypeScript */}
    {/* <Lesson06 /> */}
-   <Homework07 />
+   {/* <Homework07 /> */}
+   {/* lesson08 */}
+   {/* <Lesson08 /> */}
     </>
   )
 }
