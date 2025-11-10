@@ -32,7 +32,7 @@ const onPlusClick = ()=>{
 }
    
   return (
-    <CounterWrapper>
+    <CounterWrapper primary>
       <ButtonWrapper>
         <Button name="-" onClick={() => {OnMinusClick}} />
       </ButtonWrapper>

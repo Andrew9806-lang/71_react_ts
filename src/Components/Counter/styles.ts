@@ -27,3 +27,4 @@ export const resultContainer = styled.div<CounterProps>`
     font-weight: bold;
     color:${({primary})=>(primary? " rgb(15, 44, 72)": "red")}
 `;
+//osjdiqd
