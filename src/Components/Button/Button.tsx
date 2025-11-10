@@ -1,3 +1,4 @@
+import { ButtonStyle } from "./style";
 import "./styles.css";
 import type { ButtonProps } from "./types";
 
@@ -15,14 +16,12 @@ function Button({
   disabled = false,
 }: ButtonProps) {
   return (
-    <button
-      className="button"
-      disabled={disabled}
+    <ButtonStyle primary
+     disabled={disabled}
       type={type}
-      onClick={onClick}
-    >
+       onClick={onClick}>
       {name}
-    </button>
+    </ButtonStyle>
   );
 }
 

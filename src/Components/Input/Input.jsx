@@ -1,11 +1,12 @@
 import "./styles.css";
+import{InputStyle} from "./styles";
 
 function Input({ name, type, id, label, placeholder }) {
   return (
-    <div className="input-container">
+    <InputStyle>
       <label htmlFor={id}>{label}</label>
       <input name={name} type={type} id={id} placeholder={placeholder} />
-    </div>
+  </InputStyle>
   );
 }
 

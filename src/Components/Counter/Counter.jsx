@@ -1,9 +1,9 @@
 // import huka razobrat
 import { useState } from "react";
-
-
-import "./styles.css";
+import{CounterWrapper,ButtonWrapper,ResultContainer} from "./styles"
 import Button from "../Button/Button";
+
+
 function Counter() {
     // shag - vizov huka 
     //  v vizove huka neobhodimo peredat znachenie po umolchaniyu (luboi tip dannih)
@@ -32,15 +32,15 @@ const onPlusClick = ()=>{
 }
    
   return (
-    <div className="counter-wrapper">
-      <div className="button-wraper">
+    <CounterWrapper>
+      <ButtonWrapper>
         <Button name="-" onClick={() => {OnMinusClick}} />
-      </div>
-      <div className="result-container">{counter}</div>
-      <div className="button-wraper">
+      </ButtonWrapper>
+  <ResultContainer primary >{counter}</ResultContainer>
+      <ButtonWrapper>
         <Button name="+" onClick={() => {onPlusClick}} />
-      </div>
-    </div>
+      </ButtonWrapper>
+    </CounterWrapper>
   );
 }
 export default Counter;
