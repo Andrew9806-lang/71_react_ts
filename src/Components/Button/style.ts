@@ -4,6 +4,7 @@ interface ButtonProps{
   primary?:boolean
 }
 
+
   export const ButtonStyle = styled.button<ButtonProps>`
     width: 100%;
   padding: 20px;
