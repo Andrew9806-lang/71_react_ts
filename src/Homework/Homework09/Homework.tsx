@@ -1,50 +1,73 @@
-import Button from "../../Components/Button/Button";
 import { useState, type ChangeEvent } from "react";
-import { HomeworkWrapper, Result} from "./style";
-import Input from "../../Components/Input/Input";
-import { InputsWrapper } from "../../Lesson/Lesson09/style";
+
+import Input from "../../Components/Input/Input"
+import {
+  FormWrapper,
+  Homework09Wrapper,
+  Result,
+  ResultWrapper,
+} from "./style";
+import Button from "../../Components/Button/Button";
 
 function Homework09() {
-  const [nameLastname, setNameLastname] = useState<string>("");
-  const [userEmail, setUserEmail] = useState<string>("");
-  const [result, setResult] = useState<string>("");
+  const [firstNote, setFirstNote] = useState<string>("");
+  const [secondNote, setSecondNote] = useState<string>("");
+  const [firstResult, setFirstResult] = useState<string>("");
+  const [secondResult, setSecondResult] = useState<string>("");
+  const [isShowResult, setIsShowResult] = useState<boolean>(false);
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setNameLastname(event.target.value);
+  //   отправка запроса
+  console.log("fetch data ");
+
+  const firstNoteOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFirstNote(event.target.value);
   };
 
-  const onChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
-    setUserEmail(event?.target.value);
+  const secondNoteOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSecondNote(event.target.value);
   };
 
   const showResult = () => {
-    setResult(`name:${nameLastname}  email:${userEmail}`);
+    setFirstResult(firstNote);
+    setSecondResult(secondNote);
+
+    setIsShowResult(!isShowResult);
+    // !false -> true
+    // !true -> false
   };
 
   return (
-    <HomeworkWrapper>
-      <InputsWrapper>
+    <Homework09Wrapper>
+      <FormWrapper>
         <Input
-          name="Name and Lastname"
-          label="Name und Lastname"
-          placeholder="please input your name und lastname"
-          id="Name_lsatname_id"
-          value={nameLastname}
-          onChange={onChange}
+          name="first-note"
+          placeholder="Enter first note"
+          label="First note"
+          id="first-note-id"
+          value={firstNote}
+          onChange={firstNoteOnChange}
         />
         <Input
-          name="User Email"
-          label="User Email"
-          placeholder="please input your email"
-          id="User_email_id"
-          value={userEmail}
-          onChange={onChangeEmail}
+          name="second-note"
+          placeholder="Enter second note"
+          label="Second note"
+          id="second-note-id"
+          value={secondNote}
+          onChange={secondNoteOnChange}
         />
-
-        <Button name="Get" onClick={showResult} />
-      </InputsWrapper>
-      {result && <Result>{result}</Result>}
-    </HomeworkWrapper>
+        <Button name="SHOW/HIDE" onClick={showResult} />
+      </FormWrapper>
+      {/* {isShowResult && (
+        <ResultWrapper>
+          <Result>{firstResult}</Result>
+          <Result>{secondResult}</Result>
+        </ResultWrapper>
+      )} */}
+      <ResultWrapper isShow={isShowResult}>
+        <Result>{firstResult ? firstResult : "-"}</Result>
+        <Result>{secondResult ? secondResult : "-"}</Result>
+      </ResultWrapper>
+    </Homework09Wrapper>
   );
 }
 
