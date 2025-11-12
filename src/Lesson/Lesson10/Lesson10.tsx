@@ -26,6 +26,7 @@ console.log("Lesson 10 rerender");
   // chtob funkciya (1i argument) vipolnilas tolko 1 raz(pri pervom randere)
   //nuzhno peredat pustoi massiv zavisimostei
   //useEffect daet nam chtom log ne vipolnalsya postoyanno 
+  // useEffect delaet obnovleniya avtomaticheski bez knopki
   useEffect(()=>{console.log("Mounting");
   },[]);
 
@@ -34,6 +35,7 @@ console.log("Lesson 10 rerender");
   // значения (состоянии) первого инпута, тогда во второй аргумент - массив зависимостей
   // нужно добавить соответствующую переменную
   // otslezhivaem izmeneniya pervogo inputa
+  //esli zhe mi ukazhem peremennuyu v massiv to ne budet izmenyatsa poka ne izmenitsya pole 
   useEffect(() => {
     console.log("First input update");
   }, [userName]);
@@ -70,7 +72,7 @@ setJoke(`${data.setup} - ${data.punchline}`)
     useEffect(() => {
     console.log("First input update");
   }, [userName]);
-  
+
   return (
     <Lesson10Wrapper>
       <InputsWrapper>
