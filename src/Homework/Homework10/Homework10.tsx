@@ -46,7 +46,7 @@ function Homework10() {
   };
   useEffect(() => {
     fetchCatNinjaFact();
-  }, []);
+  }, [name]);
   return (
     <Homework10Wrapper>
       <InputWrapper>
