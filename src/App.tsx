@@ -2,7 +2,8 @@
 
 // import Lesson09 from "./Lesson/Lesson09/Lesson09"
 // import Homework09 from "./Homework/Homework09/Homework"
-import Homework10 from "./Homework/Homework10/Homework10"
+// import Homework10 from "./Homework/Homework10/Homework10"
+import Lesson12 from "./Lesson/Lesson12/Lesson12"
 // import Lesson10 from "./Lesson/Lesson10/Lesson10"
 import GlobalStyles from "./styles/GlobalStyles"
 
@@ -29,7 +30,8 @@ function App() {
    {/* <Lesson08 /> */}
    {/* <Lesson09 /> */}
    {/* <Lesson10 /> */}
-   <Homework10 />
+   {/* <Homework10 /> */}
+   <Lesson12 />
     </>
   )
 }
