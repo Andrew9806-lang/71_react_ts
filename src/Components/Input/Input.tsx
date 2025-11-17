@@ -9,6 +9,7 @@ function Input({
   placeholder,
   value,
   error,
+  // checked,
   onChange,
 }: InputProps) {
   return (
@@ -20,6 +21,7 @@ function Input({
         id={id}
         placeholder={placeholder}
         value={value}
+        // checked={type=== "checkbox"? {checked}:{value}}
         onChange={onChange}
       />
       <ErrorMessage>{error}</ErrorMessage>
