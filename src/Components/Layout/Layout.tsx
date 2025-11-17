@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Footer,
   Header,
@@ -10,11 +11,13 @@ import {
 import type { LayoutProps } from "./type";
 
 function Lyout({ children }: LayoutProps) {
-    // children pomogaet perenesti vsyu stranicu
+  // children pomogaet perenesti vsyu stranicu
   return (
     <LayoutComponent>
       <Header>
-        <Logo></Logo>
+    <Link to="/">
+    <Logo />
+    </Link>
         <NavContainer>
           <StyledNavLink
             to="/"
@@ -42,11 +45,21 @@ function Lyout({ children }: LayoutProps) {
           >
             Users
           </StyledNavLink>
+          <StyledNavLink
+            to="/clients"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? "underline" : "none",
+            })}
+          >
+            Clients
+          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
-        <Logo></Logo>
+    <Link to="/">
+    <Logo />
+    </Link>
       </Footer>
     </LayoutComponent>
   );
