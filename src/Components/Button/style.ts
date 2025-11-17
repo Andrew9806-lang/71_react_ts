@@ -1,14 +1,13 @@
 import styled from "@emotion/styled";
 
-interface ButtonProps{
-  primary?:boolean
+interface ButtonProps {
+  primary?: boolean;
 }
 
-
-  export const ButtonStyle = styled.button<ButtonProps>`
-    width: 100%;
+export const ButtonStyle = styled.button<ButtonProps>`
+  width: 100%;
   padding: 20px;
-  background-color:${({primary})=>(primary? " #1F27F5":"red")};
+  background-color: ${({ primary }) => (primary ? "red" : "#1F27F5")};
   font-size: 20px;
   color: white;
   border: none;

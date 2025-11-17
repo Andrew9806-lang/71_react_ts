@@ -16,7 +16,7 @@ function Button({
   primary,
 }: ButtonProps) {
   return (
-    <ButtonStyle primary
+    <ButtonStyle primary={primary}
      disabled={disabled}
       type={type}
        onClick={onClick}
@@ -25,5 +25,4 @@ function Button({
     </ButtonStyle>
   );
 }
-
-export default Button;
+export default Button
