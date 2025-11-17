@@ -15,8 +15,8 @@ export const Header = styled.header`
   color: #0a2837ff;
 `;
 export const Logo = styled.div`
-  width: 80px;
-  height: 80px;
+  min-width: 80px;
+  min-height: 80px;
   background-color: #0a2837ff;
   border-radius: 50%;
   cursor: pointer;
@@ -43,3 +43,10 @@ export const Footer = styled.footer`
   padding: 20px;
   background-color: #b2d7a7ff;
 `;
+
+export const ButtonLogo= styled.div`
+display: flex;
+align-items: center;
+gap: 16px;
+max-width: 200px;
+`
