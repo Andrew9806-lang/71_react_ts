@@ -1,4 +1,6 @@
+import { Link, useNavigate } from "react-router-dom";
 import {
+  ButtonLogo,
   Footer,
   Header,
   LayoutComponent,
@@ -7,46 +9,37 @@ import {
   NavContainer,
   StyledNavLink,
 } from "./style";
-import type { LayoutProps } from "./type";
+import type { LayoutProps, NavLink } from "./type";
+import Button from "../Button/Button";
+import { navLinksData } from "./data";
+import NavigationLink from "../NavigationLinks/NavigationLinks";
+import { v4 } from "uuid";
 
 function Lyout({ children }: LayoutProps) {
-    // children pomogaet perenesti vsyu stranicu
+  // children pomogaet perenesti vsyu stranicu
+  const navigate = useNavigate();
+  const goToHome = () => {
+    navigate(-1);
+  };
+  const navLinks = navLinksData.map(({path,name}:NavLink)=>{
+    return <NavigationLink key={v4()} path={path} name={name} />
+  })
   return (
     <LayoutComponent>
       <Header>
-        <Logo></Logo>
-        <NavContainer>
-          <StyledNavLink
-            to="/"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            Home
-          </StyledNavLink>
-
-          <StyledNavLink
-            to="/about"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            About
-          </StyledNavLink>
-
-          <StyledNavLink
-            to="/users"
-            style={({ isActive }) => ({
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            Users
-          </StyledNavLink>
-        </NavContainer>
+        <Link to="/">
+          <Logo />
+          <ButtonLogo>
+            <Button name="<--" onClick={goToHome} />
+          </ButtonLogo>
+        </Link>
+        <NavContainer>{navLinks}</NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
-        <Logo></Logo>
+        <Link to="/">
+          <Logo />
+        </Link>
       </Footer>
     </LayoutComponent>
   );
