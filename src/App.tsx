@@ -17,6 +17,9 @@ import FaceBook from "./pages/pages/Clients/Components/Facebook/Facebook";
 import Gmail from "./pages/pages/Clients/Components/Gmail/Gmail";
 import Mercedes from "./pages/pages/Clients/Components/Mercedes/Mercedes";
 import { Logo } from "./Components/Layout/style";
+import { v4 } from "uuid";
+import { routesData } from "./routes/routes/routes";
+import type { RoutePage } from "./routes/routes/types";
 
 // import Lesson12 from "./Lesson/Lesson12/Lesson12"
 // import Lesson10 from "./Lesson/Lesson10/Lesson10"
@@ -32,6 +35,9 @@ import { Logo } from "./Components/Layout/style";
 // import domamshnih rabot
 
 function App() {
+  const routes = routesData.map(({ path, element }: RoutePage) => {
+    return <Route key={v4()} path={path} element={element} />;
+  });
   return (
     <BrowserRouter>
       <GlobalStyles />
@@ -39,17 +45,7 @@ function App() {
         {/* Routes sobiraet vse marshruti prilozheniya  */}
         <Routes>
           {/* Rout eto komponent kotoriy peredaetsya v marshrut i v kontent  */}
-
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/user" element={<User />} />
-          {/* domasska */}
-          <Route path="/clients" element={<Clients />} />
-          {/* company */}
-          <Route path="/clients/facebook" element={<FaceBook />} />
-          <Route path="/clients/gmail" element={<Gmail />} />
-          <Route path="/clients/mercedes" element={<Mercedes />} />
+          {routes}
         </Routes>
       </Layout>
 
