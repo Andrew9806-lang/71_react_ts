@@ -19,5 +19,6 @@ export const routesData: RoutePage[] = [
   { path: "/clients/facebook", element: <FaceBook /> },
   { path: "/clients/google", element: <Mercedes /> },
     { path: "/lesson14", element: <Lesson14 /> },
+    {path:"/homewoek14",element:<Homework14 />}
       { path: "*", element: "Page not found" },
 ];
